@@ -1,0 +1,53 @@
+# Spring
+spring:
+  profiles:
+    active: local
+  application:
+    name: @project.name@
+  jackson:
+    serialization:
+      write_dates_as_timestamps: false
+  data:
+    rest:
+      base-path: /api
+
+# Server
+server:
+ port: 0
+ address: localhost
+
+# Logging
+logging:
+  path: log/
+
+# Infos Build
+info:
+  build:
+    artifact: @project.artifactId@
+    name: @project.name@
+    description: @project.description@
+    version: @project.version@
+
+# Management
+management:
+  context-path: /manage
+  security:
+    enabled: false
+  info:
+     git:
+       mode: full
+  health:
+    refresh:
+      enabled: true
+# Endpoints
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  health:
+    enabled: true
+    sensitive: false
+  logfile:
+    sensitive: false
+
