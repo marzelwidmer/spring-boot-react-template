@@ -18,9 +18,9 @@ package ch.keepcalm.react;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Entity;
 
 /**
  * @author marcelwidmer
@@ -31,7 +31,8 @@ import javax.persistence.Id;
 @Entity
 public class Employee {
 
-	@Id @GeneratedValue
+	@Id
+	@GeneratedValue
 	private Long id;
 	private String firstName;
 	private String lastName;
