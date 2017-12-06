@@ -72,17 +72,20 @@ class EmployeeList extends Component {
             <Employee key={employee._links.self.href} employee={employee}/>
         );
         return (
-            <table>
-                <tbody>
+            <Table striped bordered condensed hover>
+                <thead>
                 <tr>
+                    <th>#</th>
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Description</th>
                 </tr>
-                {buttonsInstance}
-                {tableInstance}
+                </thead>
+                <tbody>
+                {employees}
                 </tbody>
-            </table>
+                {buttonsInstance}
+            </Table>
         )
     }
 }
