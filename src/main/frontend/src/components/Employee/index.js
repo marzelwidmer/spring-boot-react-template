@@ -28,6 +28,15 @@ import { Button, ButtonToolbar } from 'react-bootstrap';
 // );
 
 class Employee extends Component {
+    constructor(props) {
+        super(props);
+        this.handleDelete = this.handleDelete.bind(this);
+    }
+
+    handleDelete() {
+        alert('delete ' + this.props.employee._links.self.href);
+        //this.props.onDelete(this.props.employee);   {this.props.employee._links.self.href}
+    }
     render() {
         return (
             <tr>
@@ -36,7 +45,7 @@ class Employee extends Component {
                 <td>{this.props.employee.description}</td>
                 <td>
                     <ButtonToolbar>
-                        <Button bsStyle="primary" href={this.props.employee._links.self.href}>Detail</Button>
+                        <Button bsStyle="danger" onClick={this.handleDelete}>Delete</Button>
                     </ButtonToolbar>
 
                 </td>
